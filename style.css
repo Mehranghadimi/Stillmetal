@@ -1,0 +1,276 @@
+:root {
+  --bg:#0b1020;
+  --panel:#111831;
+  --muted:#9db1d1;
+  --text:#e9f0ff;
+  --accent:#6ea8fe;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --radius:16px;
+}
+
+html, body {
+  height:100%;
+}
+
+body {
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:radial-gradient(1200px 800px at 85% -10%,#18213f 0,var(--bg) 60%);
+  color:var(--text);
+}
+
+.wrap {
+  max-width:1100px;
+  margin:32px auto;
+  padding:0 16px;
+}
+
+header {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+header h1 {
+  font-size:clamp(30px,4vw,38px);
+  margin:0;
+}
+
+header .tag {
+  padding:5px 18px;
+  border-radius:999px;
+  background:#1f2a52;
+  color:#ffffff;
+  font-size:22px;
+}
+
+.card {
+  background:linear-gradient(180deg,#141b36,#0f1530);
+  border:1px solid #1f2a52;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.grid {
+  display:grid;
+  gap:16px;
+}
+@media (min-width:960px){
+  .grid{grid-template-columns:1.2fr 1fr}
+}
+
+.section {
+  padding:18px;
+}
+
+.section h2 {
+  margin:0 0 5px;
+  font-size:25px;
+  color:#ffffff;
+}
+
+.fieldset {
+  display:grid;
+  gap:8px;
+}
+
+.row {
+  display:grid;
+  grid-template-columns:1fr 90px;
+  gap:10px;
+  align-items:center;
+}
+
+.row label {
+  font-size:16px;
+}
+
+input[type=number],
+select {
+  width:100%;
+  box-sizing:border-box;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid #2a386d;
+  background:#0c1230;
+  color:var(--text);
+  outline:none;
+  transition:border .2s,box-shadow .2s;
+  -moz-appearance:textfield;
+}
+
+input[type=number]:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(110,168,254,.15);
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance:none;
+  margin:0;
+}
+
+.toolbar {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.btn {
+  border:1px solid #2a386d;
+  background:#0f1530;
+  color: var(--text);
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.btn.primary {
+  border-color:#2d49a4;
+  background:linear-gradient(180deg,#2a47a3,#203a86);
+}
+
+.btn.success {
+  border-color:#1f7a44;
+  background:linear-gradient(180deg,#29c268,#1da157);
+}
+
+.btn:disabled {
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+.results {
+  margin-top:16px;
+  display:grid;
+  gap:16px;
+}
+
+.stat {
+  background:#0d1431;
+  border:1px solid #1f2a52;
+  border-radius:12px;
+  padding:12px;
+  display:grid;
+  gap:4px;
+}
+
+.stat .k {
+  font-size:12px;
+  color:#9db1d1;
+}
+.stat .v {
+  font-size:16px;
+  font-weight:700;
+}
+
+table {
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  background:#0d1431;
+  border:1px solid #1f2a52;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+thead th {
+  position:sticky;
+  top:0;
+  background:#162155;
+  color:#cbe0ff;
+  text-align:left;
+  font-weight:700;
+  padding:10px 12px;
+  font-size:13px;
+  z-index:1;
+}
+
+tbody td {
+  padding:10px 12px;
+  border-top:1px solid #1f2a52;
+  font-size:13px;
+}
+
+tbody tr:hover {
+  background:#0f1942;
+}
+
+.note {
+  font-size:12px;
+  color:#93a8cc;
+}
+
+.rule {
+  border-color:#1f2a52;
+  border-top:1px solid;
+  opacity:.4;
+  margin:16px 0;
+}
+
+.rawlist-pre {
+  margin:0;
+  white-space:pre-wrap;
+  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size:12px;
+  color:#cfe1ff;
+}
+
+.ca-toolbar {
+  margin-bottom:10px;
+  gap:8px;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.drop-zone {
+  border:2px dashed #666;
+  border-radius:8px;
+  padding:20px;
+  text-align:center;
+  cursor:pointer;
+}
+
+/* Text inputs for Temperature and C/A range */
+#tempInput,
+#caRangeInput {
+  flex: 1;
+  min-width: 260px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #2a386d;
+  background: #0c1230;
+  color: #e9f0ff;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  font-size: 14px;
+}
+
+#tempInput:focus,
+#caRangeInput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(110, 168, 254, 0.15);
+}
+
+.ca-toolbar select {
+  flex: 1;
+  min-width: 140px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #2a386d;
+  background: #0c1230;
+  color: #e9f0ff;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.ca-toolbar select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(110, 168, 254, 0.15);
+}
+
